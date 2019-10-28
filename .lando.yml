@@ -1,0 +1,32 @@
+name: cash-me
+recipe: drupal8
+config:
+  php: "7.2"
+  webroot: web
+  xdebug: true
+  conf:
+    php: .vscode/php.ini
+events:
+  post-create:
+    - cd $LANDO_MOUNT && composer create-project contentacms/contenta-jsonapi-project tmp --stability dev --no-interaction --no-install && cd tmp && mv * .[^.]* .. && cd .. && rm -rf tmp
+  post-install:
+    - appserver: cd $LANDO_WEBROOT && drush si --db-url=mysql://drupal8:drupal8@database:3306/drupal8 -y
+  post-devel:
+    - appserver: cd $LANDO_WEBROOT && drupal site:mode dev
+services:
+  appserver:
+    build:
+      - "cd $LANDO_MOUNT && composer install"
+tooling:
+  install:
+    description: Install Application
+    cmd: true
+    service: appserver
+  create:
+    description: Create Contenta Application
+    cmd: true
+    service: appserver
+  devel:
+    description: Enable development mode
+    cmd: true
+    service: appserver

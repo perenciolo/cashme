@@ -1,0 +1,16 @@
+{
+  "name": "cashmenext",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^7.0.1",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  },
+  "scripts": {
+    "dev": "next",
+    "start": "next start",
+    "build": "next build"
+  }
+}

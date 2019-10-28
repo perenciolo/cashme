@@ -1,0 +1,46 @@
+{
+  "name": "localheinz/json-printer",
+  "type": "library",
+  "description": "Provides a JSON printer, allowing for flexible indentation.",
+  "keywords": [
+    "json",
+    "printer",
+    "formatter"
+  ],
+  "homepage": "https://github.com/localheinz/json-printer",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Andreas Möller",
+      "email": "am@localheinz.com"
+    }
+  ],
+  "require": {
+    "php": "^7.0"
+  },
+  "require-dev": {
+    "infection/infection": "~0.8.1",
+    "localheinz/php-cs-fixer-config": "~1.14.0",
+    "localheinz/test-util": "0.6.1",
+    "phpbench/phpbench": "~0.14.0",
+    "phpunit/phpunit": "^6.5.7"
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "Localheinz\\Json\\Printer\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Localheinz\\Json\\Printer\\Test\\": "test/"
+    }
+  },
+  "support": {
+    "issues": "https://github.com/localheinz/json-printer/issues",
+    "source": "https://github.com/localheinz/json-printer"
+  }
+}

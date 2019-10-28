@@ -1,0 +1,62 @@
+{
+  "name": "localheinz/composer-normalize",
+  "type": "composer-plugin",
+  "description": "Provides a composer plugin for normalizing composer.json.",
+  "keywords": [
+    "composer",
+    "normalizer",
+    "normalize",
+    "plugin"
+  ],
+  "homepage": "https://github.com/localheinz/composer-normalize",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Andreas Möller",
+      "email": "am@localheinz.com"
+    }
+  ],
+  "require": {
+    "php": "^7.1",
+    "composer-plugin-api": "^1.1.0",
+    "localheinz/composer-json-normalizer": "^1.0.2",
+    "localheinz/diff": "^1.0.0",
+    "localheinz/json-normalizer": "~0.9.0"
+  },
+  "require-dev": {
+    "composer/composer": "^1.7.0",
+    "jangregor/phpstan-prophecy": "~0.4.2",
+    "localheinz/php-cs-fixer-config": "~1.23.0",
+    "localheinz/phpstan-rules": "~0.10.0",
+    "localheinz/test-util": "~0.7.0",
+    "phpstan/phpstan": "~0.11.15",
+    "phpstan/phpstan-deprecation-rules": "~0.11.2",
+    "phpstan/phpstan-strict-rules": "~0.11.1",
+    "phpunit/phpunit": "^7.5.15",
+    "symfony/filesystem": "^4.3.4"
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "2.0-dev"
+    },
+    "class": "Localheinz\\Composer\\Normalize\\NormalizePlugin"
+  },
+  "autoload": {
+    "psr-4": {
+      "Localheinz\\Composer\\Normalize\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Localheinz\\Composer\\Normalize\\Test\\": "test/"
+    }
+  },
+  "support": {
+    "issues": "https://github.com/localheinz/composer-normalize/issues",
+    "source": "https://github.com/localheinz/composer-normalize"
+  }
+}
