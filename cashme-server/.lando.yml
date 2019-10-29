@@ -1,4 +1,4 @@
-name: contentacms
+name: cashme-server
 # https://docs.devwithlando.io/tutorials/drupal8.html
 recipe: drupal8
 
@@ -14,7 +14,7 @@ config:
 services:
   appserver:
     run:
-      - 'bash $LANDO_MOUNT/config/init.sh'
+      - "bash $LANDO_MOUNT/config/init.sh"
     overrides:
       services:
         environment:
@@ -23,8 +23,8 @@ services:
           # Set the Mink webdriver args.
           MINK_DRIVER_ARGS_WEBDRIVER: '["chrome", null, "http://host.docker.internal:4444/wd/hub"]'
         volumes:
-            # Fix linux docker host.docker.internal resolving.
-          - '$LANDO_APP_ROOT/config/linux-hosts.sh:/scripts/linux-hosts.sh'
+          # Fix linux docker host.docker.internal resolving.
+          - "$LANDO_APP_ROOT/config/linux-hosts.sh:/scripts/linux-hosts.sh"
   database:
     # Add a static db port for easy bookmarking and access through SQL clients.
     portforward: 33006

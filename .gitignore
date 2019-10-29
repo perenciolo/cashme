@@ -1,6 +1,6 @@
 /.idea
 /vendor
-/node_modules
+*/node_modules
 /web
 /libraries
 /themes/infinite/

@@ -51,7 +51,7 @@ if [ $FIRST_RUN ]; then
     echo "Installing default site."
     cd $LANDO_MOUNT/contentacms
     #cp .env.example .env
-    cp $LANDO_MOUNT/config/.env.local $LANDO_MOUNT/contentacms/.env.local
+    cp $LANDO_MOUNT/config/.env.local.example $LANDO_MOUNT/contentacms/.env.local
     cp -Rv $LANDO_MOUNT/contentacms/web/profiles/contrib/contenta_jsonapi/config/sync/* $LANDO_MOUNT/contentacms/files/sync
     composer run-script install:with-mysql
 fi
