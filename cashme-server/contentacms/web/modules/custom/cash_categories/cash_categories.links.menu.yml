@@ -1,0 +1,10 @@
+entity.cash_categories_categories.collection:
+  title: "CashMe: Categories Listing"
+  route_name: entity.cash_categories_categories.collection
+  description: "List Categories"
+  weight: 10
+cash_categories_categories.admin.structure.settings:
+  title: Category Settings
+  description: "Configure Category entity"
+  route_name: cash_categories.categories_settings
+  parent: system.admin_structure
