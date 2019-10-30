@@ -1,0 +1,8 @@
+name: CashMe Categories
+description: CashMe App Categories content entity.
+type: module
+core: 8.x
+package: CashMe
+# These modules are required by the tests, must be available at bootstrap time
+dependencies:
+  - options
