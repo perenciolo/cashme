@@ -6,4 +6,3 @@ package: CashMe
 # These modules are required by the tests, must be available at bootstrap time
 dependencies:
   - options
-  - examples
