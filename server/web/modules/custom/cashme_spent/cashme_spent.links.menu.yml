@@ -1,0 +1,13 @@
+# Spent menu items definition
+entity.spent.collection:
+  title: "Spent list"
+  route_name: entity.spent.collection
+  description: "List Spent entities"
+  parent: cashme.default
+  weight: 100
+
+spent.admin.structure.settings:
+  title: "Spent settings"
+  description: "Configure Spent entities"
+  route_name: spent.settings
+  parent: cashme.default

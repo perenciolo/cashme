@@ -1,0 +1,7 @@
+name: "CashMe Categories"
+type: module
+description: "Categories list and edit for CashMe App"
+core: 8.x
+package: "CashMe"
+dependencies:
+  - cashme_app

@@ -1,0 +1,33 @@
+add spent entities:
+  title: 'Create new Spent entities'
+
+administer spent entities:
+  title: 'Administer Spent entities'
+  description: 'Allow to access the administration form to configure Spent entities.'
+  restrict access: true
+
+delete spent entities:
+  title: 'Delete Spent entities'
+
+edit spent entities:
+  title: 'Edit Spent entities'
+
+view published spent entities:
+  title: 'View published Spent entities'
+
+view unpublished spent entities:
+  title: 'View unpublished Spent entities'
+
+view all spent revisions:
+  title: 'View all Spent revisions'
+
+revert all spent revisions:
+  title: 'Revert all Spent revisions'
+  description: 'Role requires permission <em>view Spent revisions</em> and <em>edit rights</em> for spent entities in question or <em>administer spent entities</em>.'
+
+delete all spent revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Spent revisions</em> and <em>delete rights</em> for spent entities in question or <em>administer spent entities</em>.'
+
+permission_callbacks:
+  - \Drupal\cashme_spent\SpentPermissions::generatePermissions

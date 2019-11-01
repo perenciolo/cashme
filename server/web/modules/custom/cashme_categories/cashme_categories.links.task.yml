@@ -1,0 +1,26 @@
+# Category routing definition
+category.settings_tab:
+  route_name: category.settings
+  title: 'Settings'
+  base_route: category.settings
+
+entity.category.canonical:
+  route_name: entity.category.canonical
+  base_route: entity.category.canonical
+  title: 'View'
+
+entity.category.edit_form:
+  route_name: entity.category.edit_form
+  base_route: entity.category.canonical
+  title: 'Edit'
+
+entity.category.version_history:
+  route_name: entity.category.version_history
+  base_route: entity.category.canonical
+  title: 'Revisions'
+
+entity.category.delete_form:
+  route_name:  entity.category.delete_form
+  base_route:  entity.category.canonical
+  title: Delete
+  weight: 10

@@ -1,0 +1,8 @@
+name: "CashMe Incomes"
+type: module
+description: "CashMe APP incomes table module"
+core: 8.x
+package: "CashMe"
+dependencies:
+  - cashme_app
+  - cashme_categories

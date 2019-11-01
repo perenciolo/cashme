@@ -1,0 +1,8 @@
+name: "CashMe Spent"
+type: module
+description: "Custom entity Spent module"
+core: 8.x
+package: "CashMe"
+dependencies:
+  - cashme_app
+  - cashme_categories

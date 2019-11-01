@@ -1,0 +1,33 @@
+add income entities:
+  title: 'Create new Income entities'
+
+administer income entities:
+  title: 'Administer Income entities'
+  description: 'Allow to access the administration form to configure Income entities.'
+  restrict access: true
+
+delete income entities:
+  title: 'Delete Income entities'
+
+edit income entities:
+  title: 'Edit Income entities'
+
+view published income entities:
+  title: 'View published Income entities'
+
+view unpublished income entities:
+  title: 'View unpublished Income entities'
+
+view all income revisions:
+  title: 'View all Income revisions'
+
+revert all income revisions:
+  title: 'Revert all Income revisions'
+  description: 'Role requires permission <em>view Income revisions</em> and <em>edit rights</em> for income entities in question or <em>administer income entities</em>.'
+
+delete all income revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Income revisions</em> and <em>delete rights</em> for income entities in question or <em>administer income entities</em>.'
+
+permission_callbacks:
+  - \Drupal\cashme_incomes\IncomePermissions::generatePermissions

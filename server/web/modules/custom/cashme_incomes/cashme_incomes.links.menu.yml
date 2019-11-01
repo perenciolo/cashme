@@ -1,0 +1,13 @@
+# Income menu items definition
+entity.income.collection:
+  title: "Income list"
+  route_name: entity.income.collection
+  description: "List Income entities"
+  parent: cashme.default
+  weight: 100
+
+income.admin.structure.settings:
+  title: "Income settings"
+  description: "Configure Income entities"
+  route_name: income.settings
+  parent: cashme.default
