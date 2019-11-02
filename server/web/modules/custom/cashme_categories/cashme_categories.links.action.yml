@@ -1,0 +1,5 @@
+entity.category.add_form:
+  route_name: entity.category.add_form
+  title: 'Add Category'
+  appears_on:
+    - entity.category.collection

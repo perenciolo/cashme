@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains cashme_incomes.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function cashme_incomes_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the cashme_incomes module.
+    case 'help.page.cashme_incomes':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('CashMe APP incomes table module') . '</p>';
+      return $output;
+
+    default:
+  }
+}

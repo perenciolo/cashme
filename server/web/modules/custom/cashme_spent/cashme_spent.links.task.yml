@@ -1,0 +1,26 @@
+# Spent routing definition
+spent.settings_tab:
+  route_name: spent.settings
+  title: 'Settings'
+  base_route: spent.settings
+
+entity.spent.canonical:
+  route_name: entity.spent.canonical
+  base_route: entity.spent.canonical
+  title: 'View'
+
+entity.spent.edit_form:
+  route_name: entity.spent.edit_form
+  base_route: entity.spent.canonical
+  title: 'Edit'
+
+entity.spent.version_history:
+  route_name: entity.spent.version_history
+  base_route: entity.spent.canonical
+  title: 'Revisions'
+
+entity.spent.delete_form:
+  route_name:  entity.spent.delete_form
+  base_route:  entity.spent.canonical
+  title: Delete
+  weight: 10

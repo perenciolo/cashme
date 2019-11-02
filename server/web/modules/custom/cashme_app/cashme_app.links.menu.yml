@@ -1,0 +1,5 @@
+cashme.default:
+  title: "CashMe Content"
+  route_name: cashme.default
+  description: "CashMe App bundle routes"
+  parent: system.admin_structure

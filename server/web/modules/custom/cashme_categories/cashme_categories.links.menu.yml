@@ -1,0 +1,13 @@
+# Category menu items definition
+entity.category.collection:
+  title: "Category list"
+  route_name: entity.category.collection
+  description: "List Category entities"
+  parent: cashme.default
+  weight: 100
+
+category.admin.structure.settings:
+  title: "Category settings"
+  description: "Configure Category entities"
+  route_name: category.settings
+  parent: cashme.default

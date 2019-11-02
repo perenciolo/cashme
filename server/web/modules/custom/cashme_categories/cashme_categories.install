@@ -1,0 +1,11 @@
+<?php
+
+// function cashme_categories_update_8301() {
+//   $config = \Drupal::getContainer()->get('config.factory')->getEditable('cashme_categories.links.menu');
+
+//   $config->set('entity.category.collection.parent', 'system.admin_structure');
+
+//   $config->set('category.admin.structure.settings.parent', 'system.admin_structure');
+
+//   $config->save(TRUE);
+// }

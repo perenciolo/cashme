@@ -1,0 +1,45 @@
+name: cash-me
+recipe: drupal8
+config:
+  php: "7.2"
+  webroot: web
+  drush: composer
+  drupal: true
+  conf:
+    php: .lando/php.ini
+events:
+  post-create:
+    - appserver: php -r "readfile('https://raw.githubusercontent.com/contentacms/contenta_jsonapi_project/8.x-1.x/scripts/download.sh');" > download-contentacms.sh
+    - appserver: chmod a+x download-contentacms.sh
+    - appserver: ./download-contentacms.sh $LANDO_MOUNT/tmp
+    - appserver: cd $LANDO_MOUNT/tmp
+    - appserver: mv * .[^.]* .. && cd .. && rm -rf tmp
+  post-install:
+    - appserver: "bash $LANDO_MOUNT/config/install.sh"
+    - appserver: echo "\033[0;92m Copy Local ENV to $LANDO_MOUNT"
+    - appserver: cp $LANDO_MOUNT/config/.env.local.example $LANDO_MOUNT/.env.local
+    - appserver: echo "\033[0;92m Installing Contenta CMS"
+    - appserver: "cd $LANDO_MOUNT && composer run-script install:with-mysql"
+  post-devel:
+    - appserver: cd $LANDO_WEBROOT && drupal site:mode dev
+services:
+  appserver:
+    build:
+      - "cd $LANDO_MOUNT && composer install"
+tooling:
+  drush:
+    cmd: "/app/vendor/bin/drush --root=/app/web"
+  drupal:
+    cmd: "/app/vendor/bin/drupal --root=/app/web"
+  create:
+    description: Create new project
+    cmd: true
+    service: appserver
+  install:
+    description: Install Application
+    cmd: true
+    service: appserver
+  devel:
+    description: Enable devel systems
+    cmd: true
+    service: appserver

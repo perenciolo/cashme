@@ -1,0 +1,5 @@
+entity.spent.add_form:
+  route_name: entity.spent.add_form
+  title: 'Add Spent'
+  appears_on:
+    - entity.spent.collection

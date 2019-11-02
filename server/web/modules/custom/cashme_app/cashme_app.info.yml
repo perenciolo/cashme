@@ -1,0 +1,5 @@
+name: 'CashMe APP'
+type: module
+description: 'CashMe APP primary module'
+core: 8.x
+package: 'CashMe'

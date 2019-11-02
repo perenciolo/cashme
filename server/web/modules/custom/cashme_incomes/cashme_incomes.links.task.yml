@@ -1,0 +1,26 @@
+# Income routing definition
+income.settings_tab:
+  route_name: income.settings
+  title: 'Settings'
+  base_route: income.settings
+
+entity.income.canonical:
+  route_name: entity.income.canonical
+  base_route: entity.income.canonical
+  title: 'View'
+
+entity.income.edit_form:
+  route_name: entity.income.edit_form
+  base_route: entity.income.canonical
+  title: 'Edit'
+
+entity.income.version_history:
+  route_name: entity.income.version_history
+  base_route: entity.income.canonical
+  title: 'Revisions'
+
+entity.income.delete_form:
+  route_name:  entity.income.delete_form
+  base_route:  entity.income.canonical
+  title: Delete
+  weight: 10

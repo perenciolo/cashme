@@ -1,6 +1,0 @@
-homepage:
-  title: Home
-  description: 'Welcome to Contenta.'
-  route_name: '<front>'
-  menu_name: contenta
-  weight: -10

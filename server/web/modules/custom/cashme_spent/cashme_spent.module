@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains cashme_spent.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function cashme_spent_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the cashme_spent module.
+    case 'help.page.cashme_spent':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Custom entity Spent module') . '</p>';
+      return $output;
+
+    default:
+  }
+}

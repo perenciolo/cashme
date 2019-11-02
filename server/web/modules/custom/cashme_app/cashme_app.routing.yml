@@ -1,0 +1,7 @@
+cashme.default:
+  path: "/admin/structure/cashme"
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: "CashMe Content"
+  requirements:
+    _permission: "administer content types"

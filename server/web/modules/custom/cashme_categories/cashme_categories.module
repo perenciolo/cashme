@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains cashme_categories.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function cashme_categories_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the cashme_categories module.
+    case 'help.page.cashme_categories':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Categories list and edit for CashMe App') . '</p>';
+      return $output;
+
+    default:
+  }
+}
