@@ -3,7 +3,7 @@
 namespace Drupal\cashme_categories;
 
 use Drupal\Core\StringTranslation\StringTranslationTrait;
-use Drupal\cashme_categories\Entity\CategoryType;
+use Drupal\cashme_categories\Entity\Category;
 
 
 /**
@@ -26,7 +26,7 @@ class CategoryPermissions{
   public function generatePermissions() {
     $perms = [];
 
-    foreach (CategoryType::loadMultiple() as $type) {
+    foreach (Category::loadMultiple() as $type) {
       $perms += $this->buildPermissions($type);
     }
 
@@ -36,13 +36,13 @@ class CategoryPermissions{
   /**
    * Returns a list of node permissions for a given node type.
    *
-   * @param \Drupal\cashme_categories\Entity\CategoryType $type
+   * @param \Drupal\cashme_categories\Entity\Category $type
    *   The Category type.
    *
    * @return array
    *   An associative array of permission names and descriptions.
    */
-  protected function buildPermissions(CategoryType $type) {
+  protected function buildPermissions(Category $type) {
     $type_id = $type->id();
     $type_params = ['%type_name' => $type->label()];
 

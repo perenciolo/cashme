@@ -2,11 +2,17 @@ module:
   admin_toolbar: 0
   block: 0
   breakpoint: 0
+  cashme_app: 0
+  cashme_categories: 0
+  cashme_incomes: 0
+  cashme_spent: 0
   ckeditor: 0
   comment: 0
   config: 0
+  consumer_image_styles: 0
   consumers: 0
   contenta_enhancements: 0
+  contentajs: 0
   datetime: 0
   datetime_range: 0
   decoupled_router: 0
@@ -17,6 +23,9 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  graphql: 0
+  graphql_core: 0
+  graphql_entity_definitions: 0
   hal: 0
   help: 0
   image: 0
@@ -40,6 +49,7 @@ module:
   page_cache: 0
   path: 0
   rdf: 0
+  recipes_magazin: 0
   responsive_image: 0
   rest: 0
   schemata: 0

@@ -1,0 +1,9 @@
+entity:
+  category:
+    collection:
+      parent: system.admin_structure
+category:
+  admin:
+    structure:
+      settings:
+        parent: system.admin_structure

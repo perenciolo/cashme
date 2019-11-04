@@ -3,8 +3,7 @@
 namespace Drupal\cashme_spent;
 
 use Drupal\Core\StringTranslation\StringTranslationTrait;
-use Drupal\cashme_spent\Entity\SpentType;
-
+use Drupal\cashme_spent\Entity\Spent;
 
 /**
  * Provides dynamic permissions for Spent of different types.
@@ -26,7 +25,7 @@ class SpentPermissions{
   public function generatePermissions() {
     $perms = [];
 
-    foreach (SpentType::loadMultiple() as $type) {
+    foreach (Spent::loadMultiple() as $type) {
       $perms += $this->buildPermissions($type);
     }
 
@@ -36,13 +35,13 @@ class SpentPermissions{
   /**
    * Returns a list of node permissions for a given node type.
    *
-   * @param \Drupal\cashme_spent\Entity\SpentType $type
+   * @param \Drupal\cashme_spent\Entity\Spent $type
    *   The Spent type.
    *
    * @return array
    *   An associative array of permission names and descriptions.
    */
-  protected function buildPermissions(SpentType $type) {
+  protected function buildPermissions(Spent $type) {
     $type_id = $type->id();
     $type_params = ['%type_name' => $type->label()];
 

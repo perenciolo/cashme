@@ -13,7 +13,7 @@ events:
     - appserver: chmod a+x download-contentacms.sh
     - appserver: ./download-contentacms.sh $LANDO_MOUNT/tmp
     - appserver: cd $LANDO_MOUNT/tmp
-    - appserver: mv * .[^.]* .. && cd .. && rm -rf tmp
+    - appserver: mv -f * .[^.]* .. && cd .. && rm -rf tmp
   post-install:
     - appserver: "bash $LANDO_MOUNT/config/install.sh"
     - appserver: echo "\033[0;92m Copy Local ENV to $LANDO_MOUNT"

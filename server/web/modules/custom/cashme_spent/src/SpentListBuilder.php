@@ -21,6 +21,7 @@ class SpentListBuilder extends EntityListBuilder {
     $header['category_id'] = $this->t('Category');
     $header['value'] = $this->t('Value');
     $header['user_id'] = $this->t('Author');
+    $header['ref_date'] = $this->t('Date');
     return $header + parent::buildHeader();
   }
 
@@ -33,6 +34,7 @@ class SpentListBuilder extends EntityListBuilder {
     $row['category_id'] =  count($entity->get('category_id')->referencedEntities()) > 0 ? $entity->get('category_id')->referencedEntities()[0]->get('name')->value: '';
     $row['value'] = $entity->get('value')->value;
     $row['user_id'] =  count($entity->get('user_id')->referencedEntities()) > 0 ? $entity->get('user_id')->referencedEntities()[0]->get('name')->value: '';
+    $row['ref_date'] = $entity->get('ref_date')->value;
     return $row + parent::buildRow($entity);
   }
 

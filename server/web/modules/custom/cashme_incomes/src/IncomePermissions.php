@@ -3,7 +3,7 @@
 namespace Drupal\cashme_incomes;
 
 use Drupal\Core\StringTranslation\StringTranslationTrait;
-use Drupal\cashme_incomes\Entity\IncomeType;
+use Drupal\cashme_incomes\Entity\Income;
 
 
 /**
@@ -26,7 +26,7 @@ class IncomePermissions{
   public function generatePermissions() {
     $perms = [];
 
-    foreach (IncomeType::loadMultiple() as $type) {
+    foreach (Income::loadMultiple() as $type) {
       $perms += $this->buildPermissions($type);
     }
 
@@ -36,13 +36,13 @@ class IncomePermissions{
   /**
    * Returns a list of node permissions for a given node type.
    *
-   * @param \Drupal\cashme_incomes\Entity\IncomeType $type
+   * @param \Drupal\cashme_incomes\Entity\Income $type
    *   The Income type.
    *
    * @return array
    *   An associative array of permission names and descriptions.
    */
-  protected function buildPermissions(IncomeType $type) {
+  protected function buildPermissions(Income $type) {
     $type_id = $type->id();
     $type_params = ['%type_name' => $type->label()];
 
