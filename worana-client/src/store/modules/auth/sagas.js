@@ -14,9 +14,9 @@ export function* singIn({ payload: { email, password } }) {
       `grant_type=password&client_id=ef359a3d-4cb0-4253-83c8-20b0a5a520de&client_secret=${password}&username=${email}&password=${password}`
     );
 
-    const { token, refresh_token, user } = response.data;
+    const { access_token, refresh_token } = response.data;
 
-    yield put(signInSuccess(token, refresh_token, user));
+    yield put(signInSuccess(access_token, refresh_token));
 
     history.push('/dashboard');
   } catch (error) {

@@ -5,9 +5,9 @@ export const signInRequest = (email, password) => ({
   payload: { email, password },
 });
 
-export const signInSuccess = (token, refresh_token, user) => ({
+export const signInSuccess = (token, refresh_token) => ({
   type: SIGN_IN_SUCCESS,
-  payload: { token, refresh_token, user },
+  payload: { token, refresh_token },
 });
 
 export const signFailure = () => ({ type: SIGN_FAILURE });
