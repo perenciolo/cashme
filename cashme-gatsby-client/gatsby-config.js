@@ -8,7 +8,7 @@ module.exports = {
     {
       resolve: `gatsby-source-drupal`,
       options: {
-        baseUrl: `http://localhost:33120/`,
+        baseUrl: `http://cashme.lndo.site:8000/`,
         apiBase: `api`,
       },
     },
