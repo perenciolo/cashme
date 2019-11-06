@@ -6,12 +6,14 @@ import history from '~/services/history';
 import { SIGN_IN_REQUEST } from './actionTypes';
 import { signInSuccess, signFailure } from './actions';
 
-export function* singIn({ payload: { email, password } }) {
+export function* singIn({
+  payload: { email, password, client_id, client_secret },
+}) {
   try {
     const response = yield call(
       api.post,
       'oauth/token',
-      `grant_type=password&client_id=ef359a3d-4cb0-4253-83c8-20b0a5a520de&client_secret=${password}&username=${email}&password=${password}`
+      `grant_type=password&client_id=${client_id}&client_secret=${client_secret}&username=${email}&password=${password}`
     );
 
     const { access_token, refresh_token } = response.data;
@@ -20,6 +22,7 @@ export function* singIn({ payload: { email, password } }) {
 
     history.push('/dashboard');
   } catch (error) {
+    console.tron.log(error);
     yield put(signFailure());
   }
 }

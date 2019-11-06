@@ -1,6 +1,5 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
 
@@ -11,6 +10,8 @@ import BtnPrimary from '~/components/shared/BtnPrimary';
 import { signInRequest } from '~/store/modules/auth/actions';
 
 const schema = Yup.object().shape({
+  client_id: Yup.string().required('O Client ID é obrigatório'),
+  client_secret: Yup.string().required('O Client Secret é obrigatório'),
   login: Yup.string().required('O e-mail é obrigatório'),
   password: Yup.string().required('A senha é obrigatória.'),
 });
@@ -18,21 +19,26 @@ const schema = Yup.object().shape({
 export default function Signin() {
   const dispatch = useDispatch();
 
-  function handleSubmit({ login: email, password }) {
-    dispatch(signInRequest(email, password));
+  function handleSubmit({ login: email, password, client_id, client_secret }) {
+    dispatch(signInRequest(email, password, client_id, client_secret));
   }
 
   return (
     <>
       <img src={logo} alt="WORANA" />
       <SignForm schema={schema} onSubmit={handleSubmit}>
-        <Input name="login" type="string" placeholder="Seu e-mail" />
+        <Input name="client_id" type="string" placeholder="O Client ID" />
+        <Input
+          name="client_secret"
+          type="password"
+          placeholder="O Client Secret"
+        />
+        <Input name="login" type="string" placeholder="Seu username" />
         <Input name="password" type="password" placeholder="Sua senha" />
 
         <BtnPrimary type="submit">
           <>Acessar</>
         </BtnPrimary>
-        <Link to="/register">Criar conta gratuita</Link>
       </SignForm>
     </>
   );
